@@ -1,0 +1,50 @@
+.form-container {
+  width: 100%;
+  border-radius: 8px;
+  font-family: sans-serif;
+}
+
+
+.form-container input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  margin-top: 8px;
+  box-sizing: border-box;
+  border: 1px solid #61dafb;
+  border-radius: 4px;
+  font-size: 15px;
+  color: white;
+}
+
+.form-container input:focus {
+  border-color: #61dafb;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.form-container button {
+  width: 100%;
+  background-color: #2db7de;
+  color: white;
+  padding: 15px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background-color: #29bae1;
+}
+
+@media screen and (max-width:1027px) {
+  .form-container {
+    width: 100%;
+  }
+}
