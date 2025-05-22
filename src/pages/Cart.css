@@ -40,6 +40,11 @@
     margin: auto;
     border-radius: 5px;
   }
+
+  .cartimg img{
+    width: 100%;
+    height: 100%;
+  }
   
   .title button {
     padding: 0.2rem 0.5rem;
@@ -113,5 +118,78 @@
     }
 
   
+  }
+
+  .receipt-container {
+    background:transparent;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    border: 1px solid #61dafb ;
+  }
+
+  .receipt-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .receipt-header h2 {
+    margin: 0;
+    color: #61dafb;
+  }
+
+  .receipt-id {
+    font-size: 0.85rem;
+    color:#61dafb;
+    margin-top: 4px;
+  }
+
+  .receipt-section {
+    margin-bottom: 20px;
+  }
+
+  .receipt-section h4 {
+    margin: 0 0 8px;
+    color: #61dafb;
+  }
+
+  .receipt-section p {
+    margin: 4px 0;
+    color: white;
+    font-size: 0.95rem;
+  }
+
+  .item-list {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .item:last-child {
+    margin-bottom: 0;
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #61dafb;
+    margin-top: 16px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 24px;
   }
   

@@ -1,12 +1,13 @@
 import "./Home.css";
 import { useCart } from "../context/Context";
-import { book } from "../component/Book";
+import { BookContext } from "../context/BookContext";
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 let Books = () => {
   const { cart, addToCart } = useCart();
+  const { books } = useContext(BookContext);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -18,14 +19,16 @@ let Books = () => {
         <h1>Book Store App</h1>
       </div>
       <div className="books">
-        {book.map((li) => {
-          const inCart = cart.some((item) => item.id === li.id);
+        {books.map((li) => {
+          const inCart = cart.some((item) => item.bid === li.bid);
           return (
-            <div className="book" key={li.id}>
-              <div className="bookimg"></div>
+            <div className="book" key={li.bid}>
+              <div className="bookimg">
+                <img src={li.bimg} alt="book-img" />
+              </div>
               <div className="text">
-                <p>Book Name :{li.name}</p>
-                <p>Price : {li.price} </p>
+                <p>Book Name :{li.bname}</p>
+                <p>Price : {li.bprice} </p>
                 {user ? (
                   <>
                     <button onClick={() => addToCart(li)} disabled={inCart}>

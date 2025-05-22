@@ -1,4 +1,4 @@
-.home{
+.home {
     width: 80%;
     margin: 0.5rem;
     display: flex;
@@ -8,7 +8,7 @@
 
 }
 
-.header{
+.header {
     width: 100%;
     padding: 1rem;
     text-align: center;
@@ -16,19 +16,26 @@
     color: #61dafb;
 }
 
-.books{
+.books {
     display: grid;
     gap: 1.5rem;
     padding: 1.5rem;
 }
 
-.bookimg{
+.bookimg {
     width: 300px;
     height: 150px;
     background-color: white;
 }
 
-.text{
+.bookimg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.text {
     width: 300px;
     height: 100px;
     display: flex;
@@ -39,7 +46,7 @@
 
 .text button {
     width: 100%;
-    padding: 0.8rem ;
+    padding: 0.8rem;
     font-size: 16px;
     border: none;
     background-color: #1cb4df;
@@ -49,20 +56,57 @@
     color: white;
 }
 
-.text button a{
+.text button a {
     text-decoration: none;
 }
 
 
-@media  screen and (min-width:768px) {
-    .books{
-        grid-template-columns: repeat(3,1fr);
+@media screen and (min-width:768px) {
+    .books {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 
 @media (max-width:1000px) and (min-width:700px) {
-    .books{
-        grid-template-columns: repeat(2,1fr);
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text {
+        width: 300px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+    }
+
+
+    .bookimg {
+        width: 300px;
+        height: 180px;
+        background-color: white;
+    }
+}
+
+
+
+@media screen and (max-width:700px) {
+   
+    .text {
+        width: 300px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+    }
+
+
+    .bookimg {
+        width: 300px;
+        height: 180px;
+        background-color: white;
     }
 }

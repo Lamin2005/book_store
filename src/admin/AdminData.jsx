@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { BookContext } from "../context/BookContext";
+import { UserListContext } from "../context/UserListContext";
+import { MessageContext } from "../context/MessageContext";
+import { useCart } from "../context/Context";
 
-let AdminData = ({ users }) => {
+let AdminData = () => {
+  let { books } = useContext(BookContext);
+  let { users } = useContext(UserListContext);
+  let { totalAmount } = useCart();
+  let { messages,deleteMessage } = useContext(MessageContext);
+  console.log(books);
+
   return (
     <main className="admin_main">
       <div className="admin_main_header">
@@ -16,7 +27,6 @@ let AdminData = ({ users }) => {
       </div>
 
       <div className="admin_home">
-        x
         <div className="view_list">
           <div className="list">
             <h3>Users</h3>
@@ -24,20 +34,26 @@ let AdminData = ({ users }) => {
           </div>
           <div className="list">
             <h3>Books</h3>
-            <h2>800</h2>
+            <h2>{books.length}</h2>
           </div>
           <div className="list">
             <h3>Amount</h3>
-            <h2>$800</h2>
+            <h2>{totalAmount}</h2>
           </div>
         </div>
         <div className="messages_list">
           <h2 style={{ color: "#61dafb" }}>Messages</h2>
           <div className="messages">
-            <div className="message">message</div>
-            <div className="message">message</div>
-            <div className="message">message</div>
-            <div className="message">message</div>
+            {messages.map((m) => {
+              return (
+                <div className="message" key={m.id}>
+                  <p><span style={{color:"greenyellow",fontWeight:"bolder"}}>Noti</span> : {m.noti}</p>
+                  <button className="m_db" onClick={()=>{
+                    deleteMessage(m.id);
+                  }}>🗑️</button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

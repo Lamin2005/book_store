@@ -6,9 +6,9 @@
 
 
 .form-container input,
-textarea {
+textarea,select {
   width: 100%;
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: transparent;
   margin-top: 8px;
   box-sizing: border-box;
