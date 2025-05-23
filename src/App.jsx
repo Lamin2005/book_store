@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ShareLayout from "./component/ShareLayout";
 import Home from "./pages/Home";
 import Card from "./pages/Cart";
@@ -29,7 +29,7 @@ function App() {
           <CartProvider>
             <UserListProvider>
               <div className="App">
-                <HashRouter>
+                <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<ShareLayout />}>
                       <Route index element={<Home />} />
@@ -64,7 +64,7 @@ function App() {
                     </Route>
                     <Route path="*" element={<Error />} />
                   </Routes>
-                </HashRouter>
+                </BrowserRouter>
               </div>
             </UserListProvider>
           </CartProvider>
